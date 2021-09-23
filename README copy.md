@@ -7,7 +7,7 @@
 
 # 本地开发环境启动
 ```
-git clone git@github.com:longlongdan/Reactssr.git
+node 版本 v11.0.0
 npm install
 npm run dev
 ```
