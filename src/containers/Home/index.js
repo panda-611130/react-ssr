@@ -8,37 +8,38 @@ import withStyle from '../../withStyle';
 
 const Home = (props) => {
 
-    useEffect(()=>{
-        if(!props.data) {
+    useEffect(() => {
+        if (!props.data) {
             props.getData();
         }
-    },[])
+    }, [])
 
-    return(
+    return (
         <div className='info'>
             <Helmet>
                 <title>ssr渲染首页</title>
                 <meta charSet='utf-8' />
                 <meta name="description" content="longdan的ssr首页" />
             </Helmet>
-            {props.data?props.data.map(item=><div key={item.id} className='item'>{item.title}</div>):''}
+            {props.data ? props.data.map(item => <div key={item.id} className='item'>{item.title}</div>) : ''}
         </div>
     )
 }
 
 const mapStateToProps = (state) => {
     return {
-        data: state.home.data||""
+        data: state.home.data || ""
     }
 }
 const mapDispatchToProps = (dispatch) => {
     return {
-        getData: ()=>{ dispatch(getHomeList); }
+        getData: () => {
+            dispatch(getHomeList);
+        }
     }
 }
-const HomeNew = connect(mapStateToProps,mapDispatchToProps)(withStyle(Home, style));
+const HomeNew = connect(mapStateToProps, mapDispatchToProps)(withStyle(Home, style));
 HomeNew.getData = (dispatch) => {
-    // console.log(api);
     return dispatch(getHomeList);
 }
 export default HomeNew;

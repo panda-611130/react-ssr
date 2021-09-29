@@ -21,7 +21,7 @@ export default [
                 path: '/transition',
                 getData: Transition.getData,
                 component: Transition
-            },{
+            }, {
                 component: NotFound
             }
         ]

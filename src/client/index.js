@@ -8,19 +8,19 @@ import { getClientStore } from '../store';
 import Routers from '../router'
 
 const App = () => {
-    return(
+    return (
         <Provider store={getClientStore()}>
             <BrowserRouter context={{}}>
                 {/* <React.Fragment>
                     {Routers.map( (route,index) => <Route key={index} path={route.path} exact={route.exact} component={route.component} ></Route> )}
                 </React.Fragment> */}
-                { renderRoutes(Routers) }
+                {renderRoutes(Routers)}
             </BrowserRouter>
         </Provider>
     )
 }
 
 ReactDom.hydrate(
-    <App/>,
+    <App />,
     document.getElementById("root")
 )
