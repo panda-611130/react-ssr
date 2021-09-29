@@ -7,10 +7,10 @@ import { getTranstionList } from './store/actions';
 
 
 const Transition = (props) => {
-    useEffect(()=>{
-        if(props.isLogin)
+    useEffect(() => {
+        if (props.isLogin)
             props.getTranstionList();
-    },[])
+    }, [])
 
 
     return (
@@ -21,8 +21,8 @@ const Transition = (props) => {
             </Helmet>
             {
                 props.isLogin
-                ?(props.list?(props.list.map(item => <div key={item.id}>{item.title}</div>)):"")
-                :<Redirect to="/"></Redirect>
+                    ? (props.list ? (props.list.map(item => <div key={item.id}>{item.title}</div>)) : "")
+                    : <Redirect to="/"></Redirect>
             }
         </div>
     )
@@ -38,7 +38,7 @@ const mapStateToProps = (state) => ({
 })
 
 const mapDispatchToProps = (dispatch) => ({
-    getTranstionList: ()=> {dispatch(getTranstionList)}
+    getTranstionList: () => { dispatch(getTranstionList) }
 })
 
-export default connect(mapStateToProps,mapDispatchToProps)(Transition);
+export default connect(mapStateToProps, mapDispatchToProps)(Transition);
