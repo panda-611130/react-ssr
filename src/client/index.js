@@ -7,7 +7,7 @@ import { renderRoutes } from 'react-router-config';
 import { getClientStore } from '../store';
 import Routers from '../router'
 
-const App = () => {
+const App = (props) => {
     return (
         <Provider store={getClientStore()}>
             <BrowserRouter context={{}}>

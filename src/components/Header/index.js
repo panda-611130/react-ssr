@@ -46,7 +46,6 @@ const Header = (props) => {
     )
 }
 
-
 const mapStateToProps = (state) => ({
     login: state.login.login
 })
@@ -55,7 +54,6 @@ const mpaStateToDispatch = dispatch => ({
     getLoginState: () => dispatch(changeState),
     changeLogin: () => { dispatch(changeState) }
 })
-
 
 const HeaderNew = connect(mapStateToProps, mpaStateToDispatch)(withStyle(Header, style));
 HeaderNew.getData = (dispatch) => {
